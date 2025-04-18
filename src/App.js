@@ -1,9 +1,9 @@
-import React, { useCallback, useRef, useState } from 'react';
-import { useStore } from 'effector-react';
+﻿import React, { useCallback, useRef, useState } from 'react';
+import { useUnit } from 'effector-react';
 import { $counter, increment, bulkInsert } from './store';
 
 function Subscriber({ id, onRender }) {
-  const counter = useStore($counter);
+  const counter = useUnit($counter);
   React.useEffect(() => {
     onRender(id);
   });
