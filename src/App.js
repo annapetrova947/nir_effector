@@ -1,4 +1,4 @@
-﻿import React, { useCallback, useRef, useState } from 'react';
+import React, { useCallback, useRef, useState } from 'react';
 import { useUnit } from 'effector-react';
 import { $counter, increment} from './store';
 
