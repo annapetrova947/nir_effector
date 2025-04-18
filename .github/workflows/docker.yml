@@ -19,6 +19,9 @@ jobs:
       - name: Сборка Docker-образа
         run: docker build -t effector-nir .
 
+      - name: Build project
+        run: npm run build
+
       - name: Deploy to Netlify
         uses: nwtgck/actions-netlify@v2.0
         with:
