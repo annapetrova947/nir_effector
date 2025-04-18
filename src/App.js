@@ -54,6 +54,7 @@ function App() {
 
   return (
     <div className="min-h-screen bg-gray-100 p-6 space-y-6">
+      <h1>Effector Benchmark</h1>
       <div className="flex gap-4">
         <button
           className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-xl"
