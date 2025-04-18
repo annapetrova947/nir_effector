@@ -1,0 +1,20 @@
+name: Build and test
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Установка зависимостей
+        run: npm install
+
+      - name: Тесты
+        run: npm test -- --watchAll=false
+
+      - name: Сборка Docker-образа
+        run: docker build -t effector-nir .
