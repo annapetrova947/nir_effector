@@ -53,25 +53,6 @@ function App() {
     setCount((prev) => prev); // Триггер перерендера
   };
 
-  const testMemoryInsertOnly = () => {
-    if (!performance.memory) {
-      alert("⚠️ performance.memory is not supported in this browser.");
-      return;
-    }
-    const before = performance.memory.usedJSHeapSize;
-    const bigData = Array.from({ length: 10000 }, (_, i) => ({ id: i, value: Math.random() }));
-    bulkInsert(bigData);
-    setTimeout(() => {
-      const after = performance.memory.usedJSHeapSize;
-      const diffBytes = after - before;
-      const diffMB = (diffBytes / 1024 / 1024).toFixed(2);
-      if (diffBytes < 0) {
-        alert("⚠️ Memory usage decreased (likely due to garbage collection)." + `\nMeasured diff: ${diffMB} MB`);
-      } else {
-        alert(`🧠 Memory used after inserting 10K records: +${diffMB} MB`);
-      }
-    }, 500);
-  };
 
   return (
       <div style={{ padding: 20 }}>
@@ -86,7 +67,6 @@ function App() {
           </select>
         </label>
 
-        <br /><br />
         <button onClick={triggerUpdate}>▶ Test Render Performance</button>
         <button onClick={triggerInitialRender}>🛠 Test Initial Render</button>
 
