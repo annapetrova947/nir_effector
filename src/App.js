@@ -1,6 +1,6 @@
 ﻿import React, { useCallback, useRef, useState } from 'react';
 import { useUnit } from 'effector-react';
-import { $counter, increment, bulkInsert } from './store';
+import { $counter, increment} from './store';
 
 function Subscriber({ id, onRender }) {
   const counter = useUnit($counter);
