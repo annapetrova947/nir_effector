@@ -74,7 +74,6 @@ function App() {
   };
 
   return (
-	<h1>React Brenchmark</h1>
       <div style={{ padding: 20 }}>
         <h1>Effector Benchmark</h1>
 
